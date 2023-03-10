@@ -1,6 +1,9 @@
 ---
 ---
 <!-- _layouts/bib.html -->
+
+
+
       <div class="row">
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
         {%- if entry.preview -%}
@@ -34,21 +37,21 @@
         <div class="author">
           {% for author in entry.author_array %}
           {% assign author_is_self = false %}
-          {% if author.last == site.scholar.last_name%}
-            {% if site.scholar.first_name contains author.first%}
+          {% if author.last contains site.scholar.last_name%}
+            {% if author.first == site.scholar.first_name%}
               {% assign author_is_self = true %}
             {% endif %}
           {% endif %}
           {% if forloop.length == 1 %}
             {% if author_is_self %}
-              <em><u>{{author.first}} {{author.last}}</u></em>
+              <em>{{author.first}} {{author.last}}</em>
             {% else %}
             {{author.first}} {{author.last}}
             {% endif %}
           {% else %}
             {% unless forloop.last %}
               {% if author_is_self %}
-                <em><u>{{author.first}} {{author.last}}</u></em>,
+                <em>{{author.first}} {{author.last}}</em>,
               {% else %}
                 {% if site.data.coauthors[author.last] %}
                   <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}</a>,
@@ -58,7 +61,7 @@
               {% endif %}
             {% else %}
               {% if author_is_self %}
-                and <em><u>{{author.first}} {{author.last}}</u></em>
+                and <em>{{author.first}} {{author.last}}</em>
               {% else %}
                 {% if site.data.coauthors[author.last] %}
                   and <a href="{{site.data.coauthors[author.last].url}}" target="_blank">{{author.first}} {{author.last}}</a>
@@ -74,6 +77,7 @@
         <!-- Journal/Book title and date -->
         {% assign proceedings = "inproceedings,incollection" | split: ','%}
         {% assign thesis = "thesis,mastersthesis,phdthesis" | split: ','%}
+
         {% if entry.type == "article" -%}
           {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
         {%- elsif proceedings contains entry.type -%}
@@ -83,14 +87,21 @@
         {%- else -%}
           {%- capture entrytype -%}{%- endcapture -%}
         {%- endif -%}
+
         {%- if entry.month -%}
           {%- capture entrymonth -%}{{ " " }}{{ entry.month | capitalize }}{%- endcapture -%}
         {%- endif -%}
+
         {%- if entry.year -%}
           {%- capture entryyear -%}{{ " " }}{{entry.year}}{%- endcapture -%}
         {%- endif -%}
+
         {% assign entrytype_text = entrytype | strip_html | strip %}
-        {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}{%- endcapture -%}
+        {%- capture periodical -%}{{ entrytype }}{%- if entrytype_text != "" and entryyear != "" -%}, {%- endif -%}{{ entrymonth }}{{ entryyear }}
+        {% if entry.volume -%}{{ ", " }}{{ entry.volume }}{%- endif -%}
+        {% if entry.number -%}{{ ", " }}{{ entry.number }}{%- endif -%}
+        {% if entry.pages -%}{{ ", " }}{{ entry.pages }}{%- endif -%}
+        {%- endcapture -%}
         <div class="periodical">
           {{ periodical | strip }}
         </div>
@@ -105,6 +116,9 @@
           {%- endif %}
           {%- if entry.arxiv %}
             <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
+          {%- endif %}
+          {%- if entry.chemrxiv %}
+            <a href="http://doi.org/{{ entry.chemrxiv }}" class="btn btn-sm z-depth-0" role="button">ChemRxiv</a>
           {%- endif %}
           {%- if entry.bibtex_show %}
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
