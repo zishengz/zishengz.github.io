@@ -2,15 +2,12 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i>
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
-  address: >
-    Department of Chemistry and Biochemistry
-    University of California, Los Angeles
 
 news: true  # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
