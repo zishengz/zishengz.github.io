@@ -20,8 +20,6 @@ I am passionate about a wide range of topics in theoretical and computational ch
 
 Trivia: I was a UCLA-CSST fellow in 2018 and a Edwin W. Pauley Fellow in 2019-2020/2022-2023. I did a research internship in Center for Nanoscale Materials, Argonne National Lab in 2022.
 
-
-
 <!-- - Statistical ensemble representation of dynamic clusters and restructuring surfaces in catalytic conditions.
 - Development of global optimizers with grand canonical and multi-objective functionality for structure search of crystals, clusters, and surfaces.
 - Realistic modeling of electrocatalytic interface to understand the roles of pH, electrode potential, solvation, and electrolyte additives.
