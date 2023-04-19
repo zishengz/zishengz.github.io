@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ":trophy:" Zisheng won the CATL-ChemCatBio Travel Award for the Spring 2023 ACS Meeting!
+title: ":trophy: Zisheng won the CATL-ChemCatBio Travel Award for the Spring 2023 ACS Meeting!"
 date: 2023-03-01 
 inline: false
 ---
