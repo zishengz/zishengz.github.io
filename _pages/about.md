@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br><b><font size="10">Seeking 2024 tenure-track position</font></b>
+subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br><b><font size="4">Seeking 2024 tenure-track position</font></b>
 
 profile:
   align: right
@@ -16,14 +16,14 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-Greetings! I am Zisheng Zhang (張 孜晟), a 4th year Ph.D. Candidate in Chemistry at the [University of California, Los Angeles (UCLA)](https://www.chemistry.ucla.edu/), advised by [Prof. Anastaissia N. Alexandrova](http://www.chem.ucla.edu/~ana/). I obtained my M.Sc. in Chemistry from UCLA in 2021, in the same group. Prior to joining UCLA, I received my B.Sc. in Chemistry from the [South University of Science and Technology of China](http://science-en.sustech.edu.cn/research/focusd/id/436.html) in 2019, advised by [Prof. Jun Li](http://www.junlilab.org/). 
+Greetings! I am Zisheng Zhang (張 孜晟), a 5th year Ph.D. Candidate in Chemistry at the [University of California, Los Angeles (UCLA)](https://www.chemistry.ucla.edu/), advised by [Prof. Anastaissia N. Alexandrova](http://www.chem.ucla.edu/~ana/). I obtained my M.Sc. in Chemistry from UCLA in 2021, in the same group. Prior to joining UCLA, I received my B.Sc. in Chemistry from the [South University of Science and Technology of China](http://science-en.sustech.edu.cn/research/focusd/id/436.html) in 2019, advised by [Prof. Jun Li](http://www.junlilab.org/). I will defend my Ph.D. in 2024 and join Stanford as a [Stanford Energy Postdoctoral Fellow](https://energypostdoc.stanford.edu/).
 
 I am passionate about a wide range of topics in theoretical and computational chemistry, including both method development and applications. My current research focuses on realistic modeling of fluxional clusters, restructuring surfaces, and electrochemical interfaces under reaction conditions. I am also interested in inverse design of functional molecules/materials, chemical bonding analysis, global optimization algorithms, and data-driven methods. Please take a look at the "projects" page to learn more about my research and publications!
 
-I will defend my Ph.D. in 2024 and am currently looking for Tenure-Track positions. The research plans of the ZZ Lab are summarized in the comic below:
+I am currently looking for Tenure-Track positions. The research plans of the ZZ Lab are summarized in the comic below:
 ![](assets/img/research_plan.png)
 
-Trivia: I am a alumnus of the late UCLA-CSST program. I did a research internship at Center for Nanoscale Materials, Argonne National Lab in 2022. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all my first- or corresponding-author papers to come, and proposals if possible.
+Trivia: I am a alumnus of the late UCLA-CSST program. I did a research internship at Center for Nanoscale Materials, Argonne National Lab in 2022. I am the rhythmic guitarist on a local band based in Austin Texas. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all my first- or corresponding-author papers to come, and proposals if possible.
 
 <!-- - Statistical ensemble representation of dynamic clusters and restructuring surfaces in catalytic conditions.
 - Development of global optimizers with grand canonical and multi-objective functionality for structure search of crystals, clusters, and surfaces.
