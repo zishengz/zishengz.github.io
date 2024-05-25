@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br><b><font size="4">Seeking 2024 tenure-track position</font></b>
+subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br><b><font size="4">Seeking tenure-track faculty position</font></b>
 
 profile:
   align: right
@@ -23,7 +23,7 @@ I am passionate about a wide range of topics in theoretical and computational ch
 I am currently looking for Tenure-Track positions. The research plans of the ZZ Lab are summarized in the comic below:
 ![](assets/img/research_plan.png)
 
-Trivia: I am a alumnus of the late UCLA-CSST program. I did a research internship at Center for Nanoscale Materials, Argonne National Lab in 2022. I am the rhythmic guitarist on a local band based in Austin Texas. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all my first- or corresponding-author papers to come, and proposals if possible.
+Trivia: I am a alumnus of the late UCLA-CSST program. I did a research internship at Center for Nanoscale Materials, Argonne National Lab in 2022. I was a rhythmic guitarist on a local band based in Austin Texas. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all my first- or corresponding-author papers to come, and proposals if possible.
 
 <!-- - Statistical ensemble representation of dynamic clusters and restructuring surfaces in catalytic conditions.
 - Development of global optimizers with grand canonical and multi-objective functionality for structure search of crystals, clusters, and surfaces.
