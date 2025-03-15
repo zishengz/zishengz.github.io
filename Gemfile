@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
-    gem 'uri', '1.0.3'
+    gem 'uri', '0.10.1'
     gem 'classifier-reborn'
     gem 'jekyll'
     gem 'jekyll-archives'
