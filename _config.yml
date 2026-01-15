@@ -63,6 +63,11 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # -----------------------------------------------------------------------------
 # Social integration
 # -----------------------------------------------------------------------------
+scholar_userid: oYBJT_kAAAAJ # your Google Scholar ID
+scholar_citations: "4,499" # your Google Scholar citations count
+scholar_hindex: "30" # your Google Scholar h-index
+scholar_papers: "50" # your Google Scholar papers count
+scholar_updated: "01/2026" # your Google Scholar updated date
 
 github_username: zishengz # your GitHub user name
 gitlab_username: # your GitLab user name
@@ -70,7 +75,6 @@ twitter_username: zisheng_zhang_ # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 linkedin_username: zishengz # your LinkedIn user name
 telegram_username: # your Telegram user name
-scholar_userid: oYBJT_kAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
 whatsapp_number: # your WhatsApp number (full phone number in international format. Omit any zeroes, brackets, or dashes when adding the phone number in international format.)
 orcid_id: 0000-0002-4370-4038 # your ORCID ID

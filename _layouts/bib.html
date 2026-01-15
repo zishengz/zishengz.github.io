@@ -4,7 +4,11 @@
 
 
 
-      <div class="row">
+      <div class="row bib-entry"
+           data-year="{{ entry.year }}"
+           data-type="{{ entry.type | default: '' }}"
+           data-selected="{% if entry.selected %}true{% else %}false{% endif %}"
+           data-topics="{% if entry.topics %}{{ entry.topics }}{% endif %}">
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
         {%- if entry.preview -%}
           {% if entry.preview contains '://' -%}
@@ -120,8 +124,13 @@
           {%- if entry.chemrxiv %}
             <a href="http://doi.org/{{ entry.chemrxiv }}" class="btn btn-sm z-depth-0" role="button">ChemRxiv</a>
           {%- endif %}
-          {%- if entry.bibtex_show %}
+          {%- if entry.bibtex %}
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
+            <button type="button"
+                    class="btn btn-sm z-depth-0 copy-bib-btn"
+                    data-bib-key="{{ entry.key }}">
+              Copy BibTeX
+            </button>
           {%- endif %}
           {%- if entry.html %}
             <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
@@ -172,6 +181,7 @@
           {%- if site.badges.dimensions_badge or entry.dimensions %}
             <span class="__dimensions_badge_embed__" {% if entry.doi %}data-doi="{{ entry.doi }}"{% else if entry.pmid %}data-pmid="{{ entry.pmid }}"{% else %}data-id="{{ entry.dimensions }}"{% endif %} data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 6px;"></span>
           {%- endif %}
+          {% include academic_badges.html %}
           </div>
           {%- endif %}
 
@@ -182,7 +192,7 @@
           </div>
           {%- endif -%}
 
-          {% if entry.bibtex_show -%}
+          {% if entry.bibtex -%}
           <!-- Hidden bibtex block -->
           <div class="bibtex hidden">
             {% highlight bibtex %}{{ entry.bibtex | hideCustomBibtex }}{% endhighlight %}
