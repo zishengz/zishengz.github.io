@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br><b><font size="4">Seeking tenure-track faculty position</font></b>
+subtitle: <i>At the intersection of catalysis, material science, and theoretical chemistry</i><br>
 
 profile:
   align: right
@@ -18,17 +18,20 @@ social: true  # includes social icons at the bottom of the page
 
 {% include scholar_pill.html %}
 
-Greetings! I am Zisheng Zhang (張 孜晟), currently a [Stanford Energy Fellow](https://energypostdoc.stanford.edu/) conducting semi-independent postdoctoral research at the [SUNCAT Center for Interface Science and Catalysis](https://suncat.stanford.edu/), hosted by Dr. Frank Abild-Pedersen and Prof. Thomas Jaramillo.
+Greetings! I am Zisheng Zhang (張 孜晟), an incoming Assistant Professor of Chemical Engineering at Stanford University, starting in Fall 2026.
 
-As a computational chemist, my research focuses on understanding chemical complexity in emerging catalytic surfaces, electrochemical interfaces, and functional molecules. I develop, maintain, and leverage a computational arsenal of quantum chemistry, statistical mechanics, and machine learning approaches.
+Currently, I am a [Stanford Energy Fellow](https://energypostdoc.stanford.edu/) conducting semi-independent postdoctoral research at the [SUNCAT Center for Interface Science and Catalysis](https://suncat.stanford.edu/), hosted by Dr. Frank Abild-Pedersen and Prof. Thomas Jaramillo.
 
-Prior to Stanford, I did undergraduate research at [Southern University of Science and Technology of China](http://science-en.sustech.edu.cn/research/focusd/id/436.html) with [Prof. Jun Li](http://www.junlilab.org/), completed my MSc & PhD at the [University of California, Los Angeles (UCLA)](https://www.chemistry.ucla.edu/) with [Prof. Anastassia N. Alexandrova](http://www.chem.ucla.edu/~ana/), and held a research internship at [Argonne National Laboratory](https://www.anl.gov/) with Dr. Maria Chan.
+As a computational chemist, my research aims to understand chemical complexities in emerging catalytic surfaces, electrochemical interfaces, and functional molecules. I develop, maintain, and leverage a computational arsenal of statistical mechanics, quantum chemistry, machine learning, and agentic AI methods.
+
+Prior to Stanford, I completed my MSc & PhD at the [University of California, Los Angeles (UCLA)](https://www.chemistry.ucla.edu/) with [Prof. Anastassia N. Alexandrova](http://www.chem.ucla.edu/~ana/), and held a research internship at [Argonne National Laboratory](https://www.anl.gov/) with Dr. Maria Chan.
+I received undergraduate training in both experiment and theory at [South University of Science and Technology of China](http://science-en.sustech.edu.cn/research/focusd/id/436.html) with Prof. Yongye Liang and [Prof. Jun Li](http://www.junlilab.org/), 
 
 
-I am currently looking for Tenure-Track faculty positions in Chemistry, Chemical Engineering, Material Science, Applied Physics, or other relevant departments. The research plans of the ZZ Lab are summarized in the comic below:
-![](assets/img/research_plan2024.png)
+<!-- I am currently looking for Tenure-Track faculty positions in Chemistry, Chemical Engineering, Material Science, Applied Physics, or other relevant departments. The research plans of the ZZ Lab are summarized in the comic below:
+![](assets/img/research_plan2024.png) -->
 
-Trivia: I am a alumnus of the late UCLA-CSST program. I did my PhD study remotely from Austin, Texas. I love birding, UrbEx, and ghost towns. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all my first- or corresponding-author papers to come, and proposals if possible.
+Trivia: I am a alumnus of the late UCLA-CSST undergraduate fellow program. I did my PhD study remotely from Austin, Texas. I love birding, UrbEx, and ghost towns. I plan to make [xkcd](https://xkcd.com/)-style TOC graphics for all publications I lead in the future, and proposals if possible.
 
 <!-- - Statistical ensemble representation of dynamic clusters and restructuring surfaces in catalytic conditions.
 - Development of global optimizers with grand canonical and multi-objective functionality for structure search of crystals, clusters, and surfaces.
