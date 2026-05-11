@@ -38,7 +38,18 @@ $ucla-dark-gold:      #FFC72C;
 $ucla-darkest-gold:   #FFB81C;
 $ucla-purple:         #8237FF;
 
+// Stanford primary colors
+// Source: https://identity.stanford.edu/design-elements/color/primary-colors/
+$stanford-cardinal-red:     #8C1515;
+$stanford-digital-red:      #B1040E;
+$stanford-cardinal-light:   #F4E3E3;
+$stanford-cardinal-mid:     #E04F4F;
+$stanford-black:            #2E2D29;
+$stanford-cool-grey:        #53565A;
+$stanford-fog:              #F4F4F4;
+$stanford-fog-light:        #FAFAFA;
+
 // Theme colors
 
-$code-bg-color-light:     rgba($purple-color, 0.05);
+$code-bg-color-light:     rgba($stanford-cardinal-red, 0.05);
 $code-bg-color-dark:      #2c3237 !default;

@@ -8,7 +8,9 @@
            data-year="{{ entry.year }}"
            data-type="{{ entry.type | default: '' }}"
            data-selected="{% if entry.selected %}true{% else %}false{% endif %}"
-           data-topics="{% if entry.topics %}{{ entry.topics }}{% endif %}">
+           data-topics="{% if entry.topics %}{{ entry.topics }}{% endif %}"
+           data-system="{% if entry.system %}{{ entry.system | downcase }}{% endif %}"
+           data-application="{% if entry.application %}{{ entry.application | downcase }}{% endif %}">
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
         {%- if entry.preview -%}
           {% if entry.preview contains '://' -%}
@@ -113,6 +115,27 @@
           {{ entry.note | strip }}
         </div>
 
+          {%- if entry.system or entry.application -%}
+          <div class="categories">
+            {%- if entry.system -%}
+              {%- assign syslist = entry.system | split: "," -%}
+              {%- for s in syslist -%}
+                {%- assign slabel = s | strip -%}
+                {%- assign skey = slabel | downcase -%}
+                <span class="cat-badge cat-system cat-{{ skey }}">{{ slabel }}</span>
+              {%- endfor -%}
+            {%- endif -%}
+            {%- if entry.application -%}
+              {%- assign applist = entry.application | split: "," -%}
+              {%- for a in applist -%}
+                {%- assign alabel = a | strip -%}
+                {%- assign akey = alabel | downcase -%}
+                <span class="cat-badge cat-app cat-{{ akey }}">{{ alabel }}</span>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+          {%- endif -%}
+
           <!-- Links/Buttons -->
           <div class="links">
           {%- if entry.abstract %}
@@ -132,8 +155,18 @@
               Copy BibTeX
             </button>
           {%- endif %}
-          {%- if entry.html %}
-            <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+          {%- assign html_href = nil -%}
+          {%- if entry.doi -%}
+            {%- if entry.doi contains '://' -%}
+              {%- assign html_href = entry.doi -%}
+            {%- else -%}
+              {%- assign html_href = entry.doi | prepend: 'https://doi.org/' -%}
+            {%- endif -%}
+          {%- elsif entry.html -%}
+            {%- assign html_href = entry.html -%}
+          {%- endif -%}
+          {%- if html_href %}
+            <a href="{{ html_href }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
           {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}

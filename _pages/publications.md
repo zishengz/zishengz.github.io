@@ -11,21 +11,30 @@ nav_order: 1
 <div class="publications">
 
   <div id="pub-filters" class="pub-filters" style="margin-bottom: 1rem;">
-    <button class="btn btn-sm z-depth-0 active" data-filter="all">
-      All
-    </button>
-    <button class="btn btn-sm z-depth-0" data-filter="selected">
-      Selected only
-    </button>
-    <button class="btn btn-sm z-depth-0" data-filter="review">
-      Review
-    </button>
-    <button class="btn btn-sm z-depth-0" data-filter="boride">
-      Boride
-    </button>
-    <button class="btn btn-sm z-depth-0" data-filter="restructuring">
-      Restructuring
-    </button>
+    <div class="filter-group">
+      <span class="filter-label">Category:</span>
+      <button class="btn btn-sm z-depth-0 active" data-filter="all">ALL</button>
+      <button class="btn btn-sm z-depth-0" data-filter="selected">SELECTED</button>
+      <button class="btn btn-sm z-depth-0" data-filter="topic:methods">METHODS</button>
+      <button class="btn btn-sm z-depth-0" data-filter="applied">APPLIED</button>
+      <button class="btn btn-sm z-depth-0" data-filter="topic:review">REVIEW</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">System:</span>
+      <button class="btn btn-sm z-depth-0" data-filter="system:boride">BORIDE</button>
+      <button class="btn btn-sm z-depth-0" data-filter="system:copper">COPPER</button>
+      <button class="btn btn-sm z-depth-0" data-filter="system:molecules">MOLECULES</button>
+      <button class="btn btn-sm z-depth-0" data-filter="system:sac">SAC</button>
+    </div>
+    <div class="filter-group">
+      <span class="filter-label">Application:</span>
+      <button class="btn btn-sm z-depth-0" data-filter="topic:restructuring">RESTRUCTURING</button>
+      <button class="btn btn-sm z-depth-0" data-filter="application:electro-catal">ELECTRO-CATAL</button>
+      <button class="btn btn-sm z-depth-0" data-filter="application:thermal-catal">THERMAL-CATAL</button>
+      <button class="btn btn-sm z-depth-0" data-filter="application:photo-catal">PHOTO-CATAL</button>
+      <button class="btn btn-sm z-depth-0" data-filter="application:battery">BATTERY</button>
+      <button class="btn btn-sm z-depth-0" data-filter="application:separation">SEPARATION</button>
+    </div>
   </div>
 
 {%- for y in page.years %}

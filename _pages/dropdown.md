@@ -15,8 +15,5 @@ children:
       permalink: https://www.catalysis-hub.org/
     - title: divider
     - title: ChemRxiv preprints
-      permalink: https://chemrxiv.org/engage/chemrxiv/search-dashboard?authors=Zisheng%20Zhang
-    - title: divider
-    - title: projects
-      permalink: /projects/
+      permalink: https://chemrxiv.org/action/doSearch?ContribAuthorRaw=Zhang%2C+Zisheng
 ---

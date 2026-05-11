@@ -10,18 +10,40 @@
         document.querySelectorAll(".bib-entry")
       );
 
+      function tokenMatch(haystack, needle) {
+        // Match the needle against a comma-separated list, with whitespace tolerated.
+        if (!haystack) return false;
+        var parts = haystack.split(",");
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i].trim() === needle) return true;
+        }
+        return false;
+      }
+
       function applyFilter(filter) {
         entries.forEach(function (el) {
           var isSelected = el.getAttribute("data-selected") === "true";
           var topics = (el.getAttribute("data-topics") || "").toLowerCase();
+          var system = (el.getAttribute("data-system") || "").toLowerCase();
+          var application = (el.getAttribute("data-application") || "").toLowerCase();
           var show = false;
 
           if (filter === "all") {
             show = true;
           } else if (filter === "selected") {
             show = isSelected;
+          } else if (filter === "applied") {
+            // "Applied" = anything that's not a methods or review paper.
+            show = !tokenMatch(topics, "methods") && !tokenMatch(topics, "review");
+          } else if (filter.indexOf(":") !== -1) {
+            var idx = filter.indexOf(":");
+            var ns = filter.slice(0, idx);
+            var val = filter.slice(idx + 1).toLowerCase();
+            if (ns === "system") show = tokenMatch(system, val);
+            else if (ns === "application") show = tokenMatch(application, val);
+            else if (ns === "topic") show = tokenMatch(topics, val) || topics.indexOf(val) !== -1;
           } else {
-            // Generic topic-based filter: match on topics tag
+            // Legacy: match on topics tag
             var f = (filter || "").toLowerCase();
             show = topics.indexOf(f) !== -1;
           }

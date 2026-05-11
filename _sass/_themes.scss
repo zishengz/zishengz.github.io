@@ -3,17 +3,16 @@
  ******************************************************************************/
  
 :root {
-  --global-bg-color: #{$ucla-light-blue};
+  --global-bg-color: #{$stanford-fog-light};
   --global-code-bg-color: #{$code-bg-color-light};
-  --global-text-color: #{$black-color};
-  --global-text-color-light: #{$grey-color};
-  --global-theme-color: #{$ucla-purple};
-  --global-hover-color: #{$ucla-purple};
-  --global-footer-bg-color: #{$ucla-dark-blue};
+  --global-text-color: #{$stanford-black};
+  --global-text-color-light: #{$stanford-cool-grey};
+  --global-theme-color: #{$stanford-cardinal-mid};
+  --global-hover-color: #{$stanford-digital-red};
+  --global-footer-bg-color: #{$stanford-black};
   --global-footer-text-color: #{$grey-color-light};
   --global-footer-link-color: #{$white-color};
-  --global-distill-app-color: #{$grey-color};
-  --global-divider-color: #{$ucla-blue};
+  --global-divider-color: #{$stanford-cardinal-mid};
   --global-card-bg-color: #{$white-color};
 
   .fa-sun {
@@ -34,17 +33,16 @@
 }
 
 html[data-theme='dark'] {
-  --global-bg-color: #{$ucla-dark-blue};
+  --global-bg-color: #{$stanford-black};
   --global-code-bg-color: #{$code-bg-color-dark};
   --global-text-color: #{$grey-color-light};
   --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$ucla-dark-gold};
-  --global-hover-color: #{$ucla-dark-gold};
-  --global-footer-bg-color: #{$ucla-light-blue};
-  --global-footer-text-color: #{$ucla-dark-blue};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
-  --global-divider-color: #{$ucla-dark-gold};
+  --global-theme-color: #{$stanford-cardinal-mid};
+  --global-hover-color: #{$stanford-cardinal-light};
+  --global-footer-bg-color: #{$stanford-fog-light};
+  --global-footer-text-color: #{$stanford-black};
+  --global-footer-link-color: #{$stanford-cardinal-red};
+  --global-divider-color: #{$stanford-cardinal-mid};
   --global-card-bg-color: #{$grey-900};
 
   .fa-sun {

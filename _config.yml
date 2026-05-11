@@ -114,21 +114,8 @@ google_site_verification:  # your google-site-verification ID (Google Search Con
 bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 # -----------------------------------------------------------------------------
-# Blog
+# Comments
 # -----------------------------------------------------------------------------
-
-# blog_name: al-folio # blog_name will be displayed in your blog page
-# blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-# blog_description: a simple whitespace theme for academics
-# permalink: /blog/:year/:title/
-
-# Pagination
-# pagination:
-#   enabled: true
-
-# related_blog_posts:
-#   enabled: true
-#   max_related: 5
 
 # Giscus comments (RECOMMENDED)
 # Follow instructions on https://giscus.app/ to setup for your repo to fill out
@@ -149,13 +136,6 @@ giscus:
 # Disqus comments (DEPRECATED)
 disqus_shortname: zisheng_zhang # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
-
-# External sources.
-# If you have blog posts published on medium.com or other exteranl sources,
-# you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -205,7 +185,6 @@ keep_files:
 
 # Plug-ins
 plugins:
-  - jekyll-archives
   - jekyll-diagrams
   - jekyll-email-protect
   - jekyll-feed
@@ -234,23 +213,6 @@ jekyll-minifier:
   exclude: ['robots.txt']
   uglifier_args:
     harmony: true
-
-# -----------------------------------------------------------------------------
-# Jekyll Archives
-# -----------------------------------------------------------------------------
-
-jekyll-archives:
-  enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
-  layouts:
-    year: archive-year
-    tag: archive-tag
-    category: archive-category
-  permalinks:
-    year: '/blog/:year/'
-    tag: '/blog/tag/:name/'
-    category: '/blog/category/:name/'
-
-display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
@@ -286,7 +248,7 @@ badges: # Display different badges for your pulications
   dimensions_badge: true # Dimensions badge (https://badge.dimensions.ai/)
 
 # Filter out certain bibtex entry keywords used internally from the bib output
-filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric]
+filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric, topics, system, application, badges, dimensions]
 
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 max_author_limit:  # leave blank to always show all authors
