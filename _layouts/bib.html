@@ -115,6 +115,7 @@
           {{ entry.note | strip }}
         </div>
 
+          <div class="entry-meta">
           {%- if entry.system or entry.application -%}
           <div class="categories">
             {%- if entry.system -%}
@@ -148,11 +149,10 @@
             <a href="http://doi.org/{{ entry.chemrxiv }}" class="btn btn-sm z-depth-0" role="button">ChemRxiv</a>
           {%- endif %}
           {%- if entry.bibtex %}
-            <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
             <button type="button"
                     class="btn btn-sm z-depth-0 copy-bib-btn"
                     data-bib-key="{{ entry.key }}">
-              Copy BibTeX
+              BibTeX
             </button>
           {%- endif %}
           {%- assign html_href = nil -%}
@@ -212,11 +212,14 @@
             <span class="altmetric-embed" {% if entry.doi %}data-doi="{{ entry.doi }}"{% else %}data-altmetric-id="{{ entry.altmetric }}"{% endif %} data-hide-no-mentions="true" data-hide-less-than="5" data-badge-type="2" data-badge-popover="right"></span>
           {%- endif %}
           {%- if site.badges.dimensions_badge or entry.dimensions %}
-            <span class="__dimensions_badge_embed__" {% if entry.doi %}data-doi="{{ entry.doi }}"{% else if entry.pmid %}data-pmid="{{ entry.pmid }}"{% else %}data-id="{{ entry.dimensions }}"{% endif %} data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right" style="margin-bottom: 6px;"></span>
+            <span class="dimensions-badge-slot" data-min-citations="{{ site.publication_badge_min_citations | default: 20 }}">
+              <span class="__dimensions_badge_embed__" {% if entry.doi %}data-doi="{{ entry.doi }}"{% else if entry.pmid %}data-pmid="{{ entry.pmid }}"{% else %}data-id="{{ entry.dimensions }}"{% endif %} data-hide-zero-citations="true" data-style="small_rectangle" data-legend="hover-right"></span>
+            </span>
           {%- endif %}
           {% include academic_badges.html %}
           </div>
           {%- endif %}
+          </div>
 
           {% if entry.abstract -%}
           <!-- Hidden abstract block -->

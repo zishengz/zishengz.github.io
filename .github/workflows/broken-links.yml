@@ -1,0 +1,64 @@
+name: Check for broken links
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "_bibliography/**"
+      - "_data/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_news/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "_sass/**"
+      - "assets/**"
+      - "*.md"
+      - "*.yml"
+      - ".github/workflows/broken-links.yml"
+  pull_request:
+    branches:
+      - master
+      - main
+    paths:
+      - "_bibliography/**"
+      - "_data/**"
+      - "_includes/**"
+      - "_layouts/**"
+      - "_news/**"
+      - "_pages/**"
+      - "_posts/**"
+      - "_projects/**"
+      - "_sass/**"
+      - "assets/**"
+      - "*.md"
+      - "*.yml"
+      - ".github/workflows/broken-links.yml"
+
+jobs:
+  link-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.0.2"
+          bundler-cache: true
+
+      - name: Install build dependencies
+        run: npm install -g mermaid.cli
+
+      - name: Build site
+        run: bundle exec jekyll build
+
+      - name: Check built site links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --verbose --no-progress --exclude-mail --base http://zishengz.github.io "_site/**/*.html"
+

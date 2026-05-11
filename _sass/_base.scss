@@ -483,24 +483,49 @@ footer.sticky-bottom {
 
 // Publications
 
+.pub-controls {
+  margin-bottom: 0.85rem;
+}
+
 .pub-filters {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 0.55rem;
+  background-color: rgba(140, 21, 21, 0.03);
+
   .filter-group {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem;
-    margin-bottom: 0.4rem;
+    display: grid;
+    grid-template-columns: 4.75rem minmax(0, 1fr);
+    align-items: start;
+    column-gap: 0.45rem;
+    row-gap: 0.25rem;
+
     .filter-label {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
+      line-height: 1.25;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
       color: var(--global-text-color-light);
-      margin-right: 0.25rem;
-      min-width: 5.5rem;
+      padding-top: 0.25rem;
     }
+
+    .filter-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
     .btn {
-      padding: 0.15rem 0.6rem;
-      font-size: 0.8rem;
+      padding: 0.12rem 0.5rem;
+      font-size: 0.72rem;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
       color: var(--global-text-color);
       border: 1px solid var(--global-text-color-light);
+      border-radius: 999px;
       background: transparent;
       &:hover {
         color: var(--global-theme-color);
@@ -511,6 +536,42 @@ footer.sticky-bottom {
         background-color: var(--global-theme-color);
         border-color: var(--global-theme-color);
       }
+    }
+  }
+
+  @media (max-width: 700px) {
+    padding: 0.65rem 0.7rem;
+
+    .filter-group {
+      grid-template-columns: 1fr;
+
+      .filter-label {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.bibsearch-container {
+  margin-bottom: 0.65rem;
+
+  .bibsearch-form-input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 0.4rem;
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+    &::placeholder {
+      color: var(--global-text-color-light);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--global-theme-color);
+      box-shadow: 0 0 0 0.15rem rgba(140, 21, 21, 0.12);
     }
   }
 }
@@ -544,7 +605,7 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       .preview {
         width: 100%;
         min-width: 80px;
@@ -572,8 +633,12 @@ footer.sticky-bottom {
       }
       .title {
         font-weight: bolder;
+        line-height: 1.25;
+        margin-bottom: 0.15rem;
       }
       .author {
+        line-height: 1.3;
+        margin-bottom: 0.15rem;
         a {
           border-bottom: 1px dashed var(--global-theme-color);
           &:hover {
@@ -595,14 +660,39 @@ footer.sticky-bottom {
           }
         }
       }
+      .periodical {
+        line-height: 1.25;
+        margin-bottom: 0.1rem;
+      }
+      .entry-meta {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.45rem;
+        margin-top: 0.35rem;
+      }
+      .links,
+      .categories,
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.25rem 0.3rem;
+        margin: 0;
+      }
       .links {
-        a.btn {
+        a.btn,
+        button.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          padding-top: 0.25rem;
-          padding-bottom: 0.25rem;
+          padding-left: 0.55rem;
+          padding-right: 0.55rem;
+          padding-top: 0.1rem;
+          padding-bottom: 0.1rem;
+          font-size: 0.68rem;
+          line-height: 1.2;
+          border-radius: 999px;
+          margin: 0;
           &:hover {
             color: var(--global-theme-color);
             border-color: var(--global-theme-color);
@@ -610,15 +700,14 @@ footer.sticky-bottom {
         }
       }
       .categories {
-        margin: 0.35rem 0 0.25rem 0;
         .cat-badge {
           display: inline-block;
-          font-size: 0.7rem;
+          font-size: 0.64rem;
           font-weight: 600;
           letter-spacing: 0.02em;
-          padding: 0.1rem 0.5rem;
-          margin: 0 0.25rem 0.25rem 0;
-          border-radius: 0.25rem;
+          padding: 0.08rem 0.42rem;
+          margin: 0;
+          border-radius: 999px;
           line-height: 1.3;
           color: $white-color;
           border: 1px solid transparent;
@@ -626,6 +715,7 @@ footer.sticky-bottom {
         // System tags — cool palette
         .cat-system.cat-boride   { background-color: #6b4f2c; }
         .cat-system.cat-copper   { background-color: #b87333; }
+        .cat-system.cat-clusters { background-color: #4d6a8a; }
         .cat-system.cat-molecules{ background-color: #6f42c1; }
         .cat-system.cat-sac      { background-color: #2698ba; }
         // Application tags — warm/distinct palette
@@ -636,15 +726,20 @@ footer.sticky-bottom {
         .cat-app.cat-separation    { background-color: #d6336c; }
       }
       .badges {
+        min-height: 1.35rem;
         span {
           display: inline-block;
           color: $black-color;
           height: 100%;
-          padding-left: 0.5rem;
+          padding-left: 0;
           vertical-align: middle;
           &:hover {
             text-decoration: underline;
           }
+        }
+        .dimensions-badge-slot {
+          display: inline-flex;
+          align-items: center;
         }
       }
       .hidden {

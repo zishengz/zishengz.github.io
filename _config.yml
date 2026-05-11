@@ -246,6 +246,7 @@ scholar:
 badges: # Display different badges for your pulications
   altmetric_badge: true # Altmetric badge (https://www.altmetric.com/products/altmetric-badges/)
   dimensions_badge: true # Dimensions badge (https://badge.dimensions.ai/)
+publication_badge_min_citations: 20 # hide Dimensions citation badges below this count when the widget exposes its citation text
 
 # Filter out certain bibtex entry keywords used internally from the bib output
 filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, selected, supp, blog, code, poster, slides, website, preview, altmetric, topics, system, application, badges, dimensions]
@@ -253,6 +254,7 @@ filtered_bibtex_keywords: [abbr, abstract, arxiv, bibtex_show, html, pdf, select
 # Maximum number of authors to be shown for each publication (more authors are visible on click)
 max_author_limit:  # leave blank to always show all authors
 more_authors_animation_delay: 10  # more authors are revealed on click using animation; smaller delay means faster animation
+bib_search: true  # enables the publications search box on /publications/
 
 
 # -----------------------------------------------------------------------------
@@ -284,6 +286,7 @@ imagemagick:
     - ".jpeg"
     - ".png"
     - ".tiff"
+    - ".gif"
   output_formats:
     webp: "-resize 800x"
 
