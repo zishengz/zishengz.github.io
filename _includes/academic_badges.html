@@ -4,7 +4,6 @@
   - orcid: your ORCID ID (e.g., "0000-0002-4370-4038")
   - semanticscholar: Semantic Scholar paper ID
   - pubmed: PubMed ID (PMID)
-  - arxiv: arXiv ID (already supported, but can add badge)
 {%- endcomment -%}
 
 {%- if entry.orcid -%}
@@ -25,10 +24,3 @@
     <span style="font-size:0.85em;color:#3366CC;">🔬 PubMed</span>
   </a>
 {%- endif -%}
-
-{%- if entry.arxiv -%}
-  <a href="https://arxiv.org/abs/{{ entry.arxiv }}" target="_blank" rel="noopener" title="arXiv">
-    <span style="font-size:0.85em;color:#B31B1B;">📄 arXiv:{{ entry.arxiv }}</span>
-  </a>
-{%- endif -%}
-

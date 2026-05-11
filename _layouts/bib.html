@@ -85,7 +85,13 @@
         {% assign thesis = "thesis,mastersthesis,phdthesis" | split: ','%}
 
         {% if entry.type == "article" -%}
-          {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
+          {%- if entry.arxiv -%}
+            {%- capture entrytype -%}<em>arXiv preprint arXiv:{{ entry.arxiv }}</em>{%- endcapture -%}
+          {%- elsif entry.journal == "ChemRxiv" or entry.doi contains "chemrxiv" -%}
+            {%- capture entrytype -%}<em>ChemRxiv preprint {{ entry.doi }}</em>{%- endcapture -%}
+          {%- else -%}
+            {%- capture entrytype -%}<em>{{entry.journal}}</em>{%- endcapture -%}
+          {%- endif -%}
         {%- elsif proceedings contains entry.type -%}
           {%- capture entrytype -%}<em>In {{entry.booktitle}}</em> {%- endcapture -%}
         {%- elsif thesis contains entry.type -%}
@@ -141,12 +147,6 @@
           <div class="links">
           {%- if entry.abstract %}
             <a class="abstract btn btn-sm z-depth-0" role="button">Abs</a>
-          {%- endif %}
-          {%- if entry.arxiv %}
-            <a href="http://arxiv.org/abs/{{ entry.arxiv }}" class="btn btn-sm z-depth-0" role="button">arXiv</a>
-          {%- endif %}
-          {%- if entry.chemrxiv %}
-            <a href="http://doi.org/{{ entry.chemrxiv }}" class="btn btn-sm z-depth-0" role="button">ChemRxiv</a>
           {%- endif %}
           {%- if entry.bibtex %}
             <button type="button"

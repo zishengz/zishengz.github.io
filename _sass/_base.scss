@@ -9,6 +9,12 @@ $font-stack-sans:  "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSy
 $font-stack-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
 $font-stack-mono:  "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, "Courier New", monospace;
 
+@font-face {
+  font-family: "xkcd Script";
+  src: url("/assets/fonts/xkcd-script.ttf") format("truetype");
+  font-display: swap;
+}
+
 html, body {
   font-family: $font-stack-sans;
   font-feature-settings: "kern", "liga", "calt";
@@ -117,10 +123,23 @@ blockquote {
 .profile {
   width: 100%;
 
+  figure {
+    margin-bottom: 0.4rem;
+  }
+
   .address {
     margin-bottom: 5px;
-    margin-top: 5px;
+    margin-top: 0;
     font-family: $font-stack-mono;
+    .profile-location {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: inherit;
+      font-size: 1rem;
+      letter-spacing: normal;
+      line-height: 1.2;
+    }
     p {
       display: inline-block;
       margin: 0;
@@ -128,10 +147,10 @@ blockquote {
   }
 }
 .profile.float-right{
-  margin-left: 1rem;
+  margin-left: 0.25rem;
 }
 .profile.float-left{
-  margin-right: 1rem;
+  margin-right: 0.25rem;
 }
 
 @media (min-width: 576px) {
@@ -484,80 +503,63 @@ footer.sticky-bottom {
 // Publications
 
 .pub-controls {
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.6rem;
 }
 
 .pub-filters {
-  display: grid;
-  gap: 0.35rem;
-  padding: 0.7rem 0.8rem;
+  display: block;
+  padding: 0.48rem 0.58rem;
   border: 1px solid var(--global-divider-color);
   border-radius: 0.55rem;
   background-color: rgba(140, 21, 21, 0.03);
 
-  .filter-group {
-    display: grid;
-    grid-template-columns: 4.75rem minmax(0, 1fr);
-    align-items: start;
-    column-gap: 0.45rem;
-    row-gap: 0.25rem;
+  .filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.14rem 0.18rem;
+  }
 
-    .filter-label {
-      font-size: 0.75rem;
-      line-height: 1.25;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      color: var(--global-text-color-light);
-      padding-top: 0.25rem;
+  .btn {
+    padding: 0.08rem 0.36rem;
+    font-size: 0.67rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color-light);
+    border-radius: 999px;
+    background: transparent;
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
     }
-
-    .filter-options {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem;
-    }
-
-    .btn {
-      padding: 0.12rem 0.5rem;
-      font-size: 0.72rem;
-      line-height: 1.2;
-      letter-spacing: 0.01em;
-      color: var(--global-text-color);
-      border: 1px solid var(--global-text-color-light);
-      border-radius: 999px;
-      background: transparent;
-      &:hover {
-        color: var(--global-theme-color);
-        border-color: var(--global-theme-color);
-      }
-      &.active {
-        color: $white-color;
-        background-color: var(--global-theme-color);
-        border-color: var(--global-theme-color);
-      }
+    &.active {
+      color: $white-color;
+      background-color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
     }
   }
 
+  .filter-all {
+    min-width: 2.8rem;
+    text-align: center;
+  }
+
   @media (max-width: 700px) {
-    padding: 0.65rem 0.7rem;
+    padding: 0.52rem 0.58rem;
 
-    .filter-group {
-      grid-template-columns: 1fr;
-
-      .filter-label {
-        padding-top: 0;
-      }
+    .filter-options {
+      gap: 0.16rem 0.2rem;
+      justify-content: flex-start;
     }
   }
 }
 
 .bibsearch-container {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.45rem;
 
   .bibsearch-form-input {
     width: 100%;
-    padding: 0.5rem 0.75rem;
+    padding: 0.42rem 0.68rem;
     border: 1px solid var(--global-divider-color);
     border-radius: 0.4rem;
     background-color: var(--global-bg-color);
@@ -778,6 +780,23 @@ footer.sticky-bottom {
         border-color: var(--global-text-color);
       }
     }
+  }
+}
+
+.post {
+  .post-description + article .publications-page {
+    margin-top: 0.35rem;
+  }
+}
+
+.publications-page {
+  .pub-controls {
+    margin-bottom: 0.3rem;
+  }
+
+  h2.year {
+    margin-top: 1.05rem;
+    padding-top: 0.7rem;
   }
 }
 
