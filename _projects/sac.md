@@ -16,7 +16,7 @@ Here we combine the best of both worlds by heterogenizing transition metal phtha
 
 - CO2RR
   - Nat. Commun. 2017, 8, 1, 14675. [[HTML]](https://www.nature.com/articles/ncomms14675) [[PDF]](https://zishengz.github.io/assets/pdf/papers/2017ncomms.pdf)
-  - ACS Catal., 2019, 9, 7, 6252-6261. [[HTML]](https://pubs.acs.org/doi/abs/10.1021/acscatal.9b01617) [[PDF]](https://zishengz.github.io/assets/pdf/papers/2019acscatal.pdf)
+  - ACS Catal., 2019, 9, 7, 6252-6261. [[HTML]](https://pubs.acs.org/doi/abs/10.1021/acscatal.9b01617)
   - Nat. Energy, 2020, 5, 9, 684-692. [[HTML]](https://www.nature.com/articles/s41560-020-0667-9) [[PDF]](https://zishengz.github.io/assets/pdf/papers/2020natene.pdf)
   - Adv. Energy Mater., 13, 6, 202203603. [[HTML]](https://onlinelibrary.wiley.com/doi/abs/10.1002/aenm.202203603) [[PDF]](https://zishengz.github.io/assets/pdf/papers/2022aem.pdf)
 - ORR

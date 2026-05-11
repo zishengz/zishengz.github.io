@@ -60,4 +60,13 @@ jobs:
       - name: Check built site links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: --verbose --no-progress --base http://zishengz.github.io "_site/**/*.html"
+          args: >-
+            --verbose
+            --no-progress
+            --offline
+            --root-dir "${{ github.workspace }}/_site"
+            --remap "^https://zishengz\.github\.io/ file://${{ github.workspace }}/_site/"
+            --remap "^http://zishengz\.github\.io/ file://${{ github.workspace }}/_site/"
+            --index-files index.html,.
+            --fallback-extensions html
+            "_site/**/*.html"

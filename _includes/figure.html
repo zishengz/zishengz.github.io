@@ -1,9 +1,11 @@
 {%- assign img_path = include.path | remove: ".jpg" | remove: ".jpeg" | remove: ".png" | remove: ".tiff" | remove: ".gif" -%}
+{%- assign figure_path = include.path | downcase -%}
+{%- assign responsive_webp = site.imagemagick.enabled and figure_path contains 'assets/img/' and figure_path contains '.gif' == false -%}
 
 <figure>
 
   <picture>
-    {% if site.imagemagick.enabled %}
+    {% if responsive_webp %}
     {% for i in site.imagemagick.widths -%}
       <source 
         class="responsive-img-srcset"
