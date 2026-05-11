@@ -3,9 +3,29 @@
     var activeFilter = "all";
     var filterContainer = document.getElementById("pub-filters");
     var searchInput = document.getElementById("bibsearch");
+    var showAllYearsButton = document.getElementById("pub-show-all-years");
     var entries = Array.prototype.slice.call(
       document.querySelectorAll(".bib-entry")
     );
+    var years = entries
+      .map(function (entry) {
+        return parseInt(entry.getAttribute("data-year") || "", 10);
+      })
+      .filter(function (year) {
+        return !isNaN(year);
+      });
+    var maxYear = years.length ? Math.max.apply(null, years) : null;
+    var recentYearCutoff = maxYear !== null ? maxYear - 4 : null;
+    var showAllYears = false;
+
+    function assignEntryNumbers() {
+      var totalEntries = entries.length;
+      entries.forEach(function (entry, index) {
+        var numberSlot = entry.querySelector(".pub-number");
+        if (!numberSlot) return;
+        numberSlot.textContent = totalEntries - index + ".";
+      });
+    }
 
     function getSearchTerm() {
       return searchInput ? searchInput.value.trim().toLowerCase() : "";
@@ -53,6 +73,13 @@
       return (entry.textContent || "").toLowerCase().indexOf(searchTerm) !== -1;
     }
 
+    function entryMatchesYearWindow(entry) {
+      if (showAllYears || recentYearCutoff === null) return true;
+      var year = parseInt(entry.getAttribute("data-year") || "", 10);
+      if (isNaN(year)) return true;
+      return year >= recentYearCutoff;
+    }
+
     function updateYearVisibility() {
       var yearHeaders = Array.prototype.slice.call(
         document.querySelectorAll(".publications h2.year")
@@ -80,12 +107,25 @@
 
       entries.forEach(function (entry) {
         var show =
+          entryMatchesYearWindow(entry) &&
           entryMatchesFilter(entry, activeFilter) &&
           entryMatchesSearch(entry, searchTerm);
         entry.style.display = show ? "" : "none";
       });
 
       updateYearVisibility();
+    }
+
+    function updateArchiveToggle() {
+      if (!showAllYearsButton) return;
+      var hasOlderYears = years.some(function (year) {
+        return year < recentYearCutoff;
+      });
+      if (!hasOlderYears) {
+        showAllYearsButton.style.display = "none";
+        return;
+      }
+      showAllYearsButton.style.display = showAllYears ? "none" : "";
     }
 
     function parseBadgeCount(text) {
@@ -147,7 +187,17 @@
       searchInput.addEventListener("input", applyFilters);
     }
 
+    if (showAllYearsButton) {
+      showAllYearsButton.addEventListener("click", function () {
+        showAllYears = true;
+        updateArchiveToggle();
+        applyFilters();
+      });
+    }
+
     if (entries.length > 0) {
+      assignEntryNumbers();
+      updateArchiveToggle();
       applyFilters();
     }
 

@@ -41,6 +41,12 @@ nav_order: 1
   {% bibliography -f papers -q @*[year={{y}}]* %}
 {% endfor %}
 
+  <div class="pub-archive-toggle">
+    <button id="pub-show-all-years" type="button" class="btn btn-sm z-depth-0">
+      SHOW ALL YEARS
+    </button>
+  </div>
+
 </div>
 
 {% include publications_js.html %}

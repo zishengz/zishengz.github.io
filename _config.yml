@@ -64,9 +64,9 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 scholar_userid: oYBJT_kAAAAJ # your Google Scholar ID
-scholar_citations: "5,008" # your Google Scholar citations count
+scholar_citations: "5,024" # your Google Scholar citations count
 scholar_hindex: "32" # your Google Scholar h-index
-scholar_papers: "52" # your Google Scholar papers count
+scholar_papers: "51" # your Google Scholar published papers count
 scholar_updated: "05/2026" # your Google Scholar updated date
 
 github_username: zishengz # your GitHub user name

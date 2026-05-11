@@ -578,6 +578,31 @@ footer.sticky-bottom {
   }
 }
 
+.pub-archive-toggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.1rem;
+  margin-bottom: 0.2rem;
+
+  .btn {
+    min-width: 12.5rem;
+    padding: 0.42rem 1rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    color: var(--global-text-color);
+    border: 1px solid var(--global-text-color-light);
+    border-radius: 999px;
+    background: transparent;
+
+    &:hover {
+      color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
+    }
+  }
+}
+
 .publications {
   margin-top: 2rem;
   h1 {
@@ -608,9 +633,12 @@ footer.sticky-bottom {
 
     li {
       margin-bottom: 0.8rem;
+      > .row.bib-entry > .preview {
+        padding-top: 0.45rem;
+      }
       .preview {
         width: 100%;
-        min-width: 80px;
+        min-width: 100px;
         max-width: 200px;
       }
       .abbr {
@@ -637,6 +665,14 @@ footer.sticky-bottom {
         font-weight: bolder;
         line-height: 1.25;
         margin-bottom: 0.15rem;
+
+        .pub-number {
+          display: inline-block;
+          min-width: 2.1rem;
+          margin-right: 0.12rem;
+          color: var(--global-text-color-light);
+          font-weight: 600;
+        }
       }
       .author {
         line-height: 1.3;
@@ -794,9 +830,43 @@ footer.sticky-bottom {
     margin-bottom: 0.3rem;
   }
 
+  .pub-archive-toggle {
+    margin-top: 1.4rem;
+  }
+
   h2.year {
-    margin-top: 1.05rem;
-    padding-top: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+    margin-bottom: 0.75rem;
+    padding-top: 0.1rem;
+    border-top: 0;
+    color: var(--global-divider-color);
+    font-size: 2.1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: right;
+
+    &::before {
+      content: "";
+      flex: 1 1 auto;
+      border-top: 1px solid var(--global-divider-color);
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .publications-page {
+    h2.year {
+      margin-top: 0.7rem;
+      margin-bottom: 0.75rem;
+      padding-top: 0.1rem;
+      font-size: 1.8rem;
+      letter-spacing: normal;
+      text-align: right;
+    }
   }
 }
 
